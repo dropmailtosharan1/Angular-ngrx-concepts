@@ -5,7 +5,10 @@ import { Actions, Effect, ofType } from '@ngrx/effects';
 import { Observable, of } from 'rxjs';
 import { mergeMap, catchError, map } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({
+    providedIn:'root'
+})
+
 export class FoodEffects {
   @Effect() getFood$: Observable<Action> = this.actions$.pipe(
     ofType('GET_FOODS'),
